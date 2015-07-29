@@ -16,47 +16,35 @@ def parse_to_roman(n):
         :param chars: the chars to be added
         :param unit: the units to be substracted"""
         
-        n -= unit
-        number += chars
+        while n >= unit:
+            n -= unit
+            number += chars
     
-    while n >= 1000:
-        add_substract('M', 1000)
+    add_substract('M', 1000)
     
-    while n >= 900:
-        add_substract('CM', 900)
+    add_substract('CM', 900)
     
-    while n >= 500:
-        add_substract('D', 500)
+    add_substract('D', 500)
     
-    while n >= 400:
-        add_substract('CD', 400)
+    add_substract('CD', 400)
     
-    while n >= 100:
-        add_substract('C', 100)
+    add_substract('C', 100)
     
-    while n >= 90:
-        add_substract('XC', 90)
+    add_substract('XC', 90)
     
-    while n >= 50:
-        add_substract('L', 50)
+    add_substract('L', 50)
     
-    while n >= 40:
-        add_substract('XL', 40)
+    add_substract('XL', 40)
     
-    while n >= 10:
-        add_substract('X', 10)
+    add_substract('X', 10)
     
-    while n >= 9:
-        add_substract('IX', 9)
+    add_substract('IX', 9)
     
-    while n >= 5:
-        add_substract('V', 5)
+    add_substract('V', 5)
     
-    while n >= 4:
-        add_substract('IV', 4)
+    add_substract('IV', 4)
     
-    while n >= 1:
-        add_substract('I', 1)
+    add_substract('I', 1)
     
     return number
 
