@@ -7,57 +7,56 @@ def parse_to_roman(n):
     
     number = ''
     
+    def add_substract(chars, unit):
+        
+        nonlocal number, n
+        
+        """adds the chars to the roman representation
+        while substracts to the number.
+        :param chars: the chars to be added
+        :param unit: the units to be substracted"""
+        
+        n -= unit
+        number += chars
+    
     while n >= 1000:
-        n -= 1000
-        number += 'M'
+        add_substract('M', 1000)
     
     while n >= 900:
-        n -= 900
-        number += 'CM'
+        add_substract('CM', 900)
     
     while n >= 500:
-        n -= 500
-        number += 'D'
+        add_substract('D', 500)
     
     while n >= 400:
-        n -= 400
-        number += 'CD'
+        add_substract('CD', 400)
     
     while n >= 100:
-        n -= 100
-        number += 'C'
+        add_substract('C', 100)
     
     while n >= 90:
-        n -= 90
-        number += 'XC'
+        add_substract('XC', 90)
     
     while n >= 50:
-        n -= 50
-        number += 'L'
+        add_substract('L', 50)
     
     while n >= 40:
-        n -= 40
-        number += 'XL'
+        add_substract('XL', 40)
     
     while n >= 10:
-        n -= 10
-        number += 'X'
+        add_substract('X', 10)
     
     while n >= 9:
-        n -= 9
-        number += 'IX'
+        add_substract('IX', 9)
     
     while n >= 5:
-        n -= 5
-        number += 'V'
+        add_substract('V', 5)
     
     while n >= 4:
-        n -= 4
-        number += 'IV'
+        add_substract('IV', 4)
     
     while n >= 1:
-        n -= 1
-        number += 'I'
+        add_substract('I', 1)
     
     return number
 
